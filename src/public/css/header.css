@@ -1,0 +1,120 @@
+.shadow {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.418);
+    position: fixed;
+    z-index: 2;
+    bottom:0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.header__index {
+    position: relative;
+    z-index: 3;
+    background-color: black;
+    color: white;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:10px;
+}
+
+.ul__header__index {
+    display:flex;
+    gap:30px;
+    list-style: none;
+    gap:10px
+}
+.ul__header__index li {
+    position: relative;
+    display:flex;
+    flex-direction: row-reverse;
+    gap:10px;
+    padding:10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+
+@media (min-width:700px) {
+    .ul__header__index li::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        transition: 0.4s;
+        width: 0;
+    }
+    .ul__header__index li:hover::before {
+        background: linear-gradient(white,#08d1ff);
+        width: 100%;
+    }
+    .ul__header__index li:hover {color: #08d1ff;}
+}
+
+header .div-button button,#close-menu{
+    border:none;
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+nav .div-img  {
+    display: none;
+    text-align: center;
+    padding:10px;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+@media (max-width:700px) {
+    .nav__header__index {
+        display: none;
+        position: fixed;
+        
+        right: 0;
+        top: 0;
+        background-color: black;
+        height: 100vh;
+        padding:10px;
+        animation: nav__animation 0.4s ;
+    }
+    .ul__header__index li:hover {
+        color: #08d1ff;
+    }
+    .close-menu-nav{
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+    }
+    @keyframes nav__animation {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    #open-menu {
+        display: block;
+    }
+    .nav__header__index .div-img {
+        display: block;
+    }
+    .ul__header__index {
+        flex-direction: column;
+        align-items: start;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .ul__header__index li {
+        font-size: 1.2em;
+    }
+}
